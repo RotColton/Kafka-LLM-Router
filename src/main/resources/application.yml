@@ -1,0 +1,24 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: "llm-group"
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+
+llm:
+  botpress:
+    url: "https://webhook.botpress.cloud/8b54376d-76f4-4f73-88ed-6299f65a8771"
+    topic: "botpress.messages"
+  openai:
+    url: "https://api.openai.com/v1/completions"
+    topic: "openai.messages"
+
+botpress:
+webhook:
+base-url: https://webhook.botpress.cloud/e8463b94-6478-48fe-b90b-0e90c839eb2a
